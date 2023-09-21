@@ -1,0 +1,30 @@
+Tic Tac Toe
+
+- Can scale from 3x3 to nxn board (6x6 order and chaos)
+- game play from terminal, no GUI
+- code should be scalable and extendable
+- position that already been picked or not on the range of the board should
+    not be invalid
+- Condition to determine game finish (three in a line, or all the 
+    position are picked)
+
+
+Scalability is not limited to the state of play. Scalability can also imply 
+    learning and intelligence.  What if (at some point in the future) you 
+    wanted to make a smart game that learned from each round. 
+    Specifically, given the size of the board, which is the best starting 
+    point, or which is the most popular starting point, etc. 
+    This would require information to be maintained by each round, 
+    the board, and even each cell of the board. This is not an expectation 
+    of the current submission, but the ability to allow for this type of 
+    scalability is not unreasonable and your design will be evaluated 
+    accordingly.
+
+To check for extendability, consider if your class design would be easily 
+    extendible to other turn based games like sorry, monopoly or card games, 
+    or other cell based board games like connect four, wordle, or chess, etc.
+
+
+
+I need a class Board to creat board for any specific number of column in one row
+    one for board function, keep track with all the data
