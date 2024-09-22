@@ -68,6 +68,7 @@ fun TaskTrackerScreen() {
                     .padding(16.dp)
             ) {
                 if (taskList.isEmpty()) {
+                    // Show message if task list is empty
                     item {
                         Text(
                             text = "click '+' to add task",
@@ -76,6 +77,7 @@ fun TaskTrackerScreen() {
                         )
                     }
                 } else {
+                    // Update task list with checkbox
                     items(taskList.size) { index ->
                         val task = taskList[index]
                         Row(
@@ -102,6 +104,7 @@ fun TaskTrackerScreen() {
                     }
                 }
             }
+            // Button banner
             Box(
                 modifier = Modifier
                     .fillMaxWidth()
@@ -111,12 +114,14 @@ fun TaskTrackerScreen() {
                 Row(
                     modifier = Modifier.align(Alignment.Center)
                 ) {
+                    // Button to add new task
                     FloatingActionButton(
                         onClick = { popUp = true },
                         modifier = Modifier.padding(end = 16.dp)
                     ) {
                         Icon(Icons.Default.Add, contentDescription = "Add New Task")
                     }
+                    // Button to delete done tasks
                     FloatingActionButton(
                         onClick = {
                             taskList = taskList.filter { !it.isChecked }
@@ -132,6 +137,7 @@ fun TaskTrackerScreen() {
                 }
             }
 
+            // Show message if task is deleted
             if (showDeletedMessage) {
                 Text(
                     text = "deleted done task",
@@ -142,6 +148,7 @@ fun TaskTrackerScreen() {
                 )
             }
 
+            // Pop-up to add new task
             if (popUp) {
                 AlertDialog(
                     onDismissRequest = { popUp = false },
@@ -155,6 +162,7 @@ fun TaskTrackerScreen() {
                                 .padding(16.dp)
                         )
                     },
+                    // Only add task if it is not blank
                     confirmButton = {
                         Button(onClick = {
                             if (newTask.isNotBlank()) {
@@ -166,6 +174,7 @@ fun TaskTrackerScreen() {
                             Text("Add")
                         }
                     },
+                    // Cancel adding task
                     dismissButton = {
                         Button(onClick = { popUp = false }) {
                             Text("Cancel")
